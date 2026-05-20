@@ -199,7 +199,10 @@ def _send_failure_email(tb: str) -> None:
 if __name__ == "__main__":
     try:
         graph = build_graph()
+        project = os.environ.get("LANGCHAIN_PROJECT", "default")
+        tracing = bool(os.environ.get("LANGCHAIN_API_KEY"))
         logger.info("=== Agentic AI Digest starting (LangGraph) ===")
+        logger.info("LangSmith tracing: %s (project: %s)", "ON" if tracing else "OFF", project)
         graph.invoke({
             "raw_articles": [],
             "new_articles": [],
