@@ -7,7 +7,7 @@ from groq import Groq
 logger = logging.getLogger(__name__)
 
 DEEP_MODEL = "llama-3.3-70b-versatile"
-BRIEF_MODEL = "llama-3.1-8b-instant"
+BRIEF_MODEL = "openai/gpt-oss-20b"
 
 _DEEP_SYSTEM = """\
 You write concise, substantive summaries for a daily agentic AI digest read by \

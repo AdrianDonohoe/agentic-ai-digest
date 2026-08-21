@@ -62,7 +62,7 @@ def dedupe_node(state: DigestState) -> dict:
 def classify_node(state: DigestState) -> dict:
     from src.classify import classify_articles
     articles = list(state.get("new_articles", []))
-    logger.info("[classify] Classifying %d articles with %s...", len(articles), "llama-3.1-8b-instant")
+    logger.info("[classify] Classifying %d articles with %s...", len(articles), "openai/gpt-oss-20b")
     client = Groq(api_key=os.environ["GROQ_API_KEY"])
     classified = classify_articles(articles, client)
     relevant = sum(1 for a in classified if a.get("relevance") != "none")

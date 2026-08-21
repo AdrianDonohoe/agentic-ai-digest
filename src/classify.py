@@ -1,4 +1,4 @@
-"""Classify article relevance to agentic AI using Groq (llama-3.1-8b-instant)."""
+"""Classify article relevance to agentic AI using Groq (openai/gpt-oss-20b)."""
 
 import json
 import logging
@@ -7,7 +7,7 @@ from groq import Groq
 
 logger = logging.getLogger(__name__)
 
-MODEL = "llama-3.1-8b-instant"
+MODEL = "openai/gpt-oss-20b"
 
 _SYSTEM = """\
 You are an AI news classifier. Determine whether a news article is relevant to \

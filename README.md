@@ -4,7 +4,7 @@ A daily email digest of agentic AI news, built on GitHub Actions and LangGraph. 
 
 1. Fetches articles from a curated set of RSS feeds + Tavily news search
 2. Deduplicates against a SQLite database of previously seen URLs
-3. Classifies each article's relevance with **Groq** (`llama-3.1-8b-instant`)
+3. Classifies each article's relevance with **Groq** (`openai/gpt-oss-20b`)
 4. Ranks results and picks the top 5 most relevant stories
 5. Generates 2–3 paragraph summaries for each (**Groq** `llama-3.3-70b-versatile`)
 6. Renders a clean HTML email and sends it via **Resend**
@@ -119,7 +119,7 @@ Groq's free tier covers this comfortably. If you're on a paid plan:
 
 | Step | Model | ~Cost/day |
 |---|---|---|
-| Classify ~80 articles | `llama-3.1-8b-instant` | < $0.001 |
+| Classify ~80 articles | `openai/gpt-oss-20b` | < $0.001 |
 | 5 deep summaries | `llama-3.3-70b-versatile` | < $0.005 |
 | **Total** | | **effectively free** |
 
